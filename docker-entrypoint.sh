@@ -30,7 +30,7 @@ else
 fi
 
 
-fetch-crl
+#fetch-crl
 fts_server
 fts_bringonline
 httpd
