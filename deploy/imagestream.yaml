@@ -1,0 +1,64 @@
+apiVersion: v1
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    labels:
+      app: fetch-crl
+    name: fetch-crl
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+    - annotations:
+        openshift.io/generated-by: OpenShiftWebConsole
+        openshift.io/imported-from: holzman/fetch-crl
+      from:
+        kind: DockerImage
+        name: holzman/fetch-crl
+      generation: 11
+      importPolicy: {}
+      name: latest
+      referencePolicy:
+        type: Source
+  status:
+    dockerImageRepository: docker-registry.default.svc:5000/burt-test-fts/fetch-crl
+    tags:
+    - items:
+      - created: 2019-08-23T15:10:39Z
+        dockerImageReference: holzman/fetch-crl@sha256:63acc03f179be6666e14afdea989af5d06dca590c8744705ed0dea76ebdf525b
+        generation: 11
+        image: sha256:63acc03f179be6666e14afdea989af5d06dca590c8744705ed0dea76ebdf525b
+      tag: latest
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    labels:
+      app: fts3
+    name: fts3
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+    - annotations: null
+      from:
+        kind: DockerImage
+        name: holzman/fts3
+      generation: 39
+      importPolicy: {}
+      name: latest
+      referencePolicy:
+        type: Source
+  status:
+    dockerImageRepository: docker-registry.default.svc:5000/burt-test-fts/fts3
+    tags:
+    - items:
+      - created: 2019-08-23T16:00:40Z
+        dockerImageReference: holzman/fts3@sha256:2f9f187b57825294e4defe00a7fbe40abb786889e7ec37906b3048072f776a7c
+        generation: 39
+        image: sha256:2f9f187b57825294e4defe00a7fbe40abb786889e7ec37906b3048072f776a7c
+      tag: latest
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
